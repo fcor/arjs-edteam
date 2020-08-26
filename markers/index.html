@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AR - Marker based</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- rawgithack development URL -->
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  </head>
+
+  <body style="margin: 0px; overflow: hidden">
+    <a-scene
+      embedded
+      arjs
+      renderer="logarithmicDepthBuffer: true;"
+      vr-mode-ui="enabled: false"
+    >
+      <a-assets>
+        <a-asset-item id="logo" src="./assets/bowser.glb"></a-asset-item>
+        <img id="pic" src="./assets/selfie.png" />
+      </a-assets>
+
+      <a-marker preset="hiro">
+
+        <a-box
+          position="0 0 0"
+          color="red"
+          scale="0.7 0.7 0.7"
+          animation="property: rotation; from: 0 0 0; to: 360 0 0; easing: linear; loop: true; dur: 2000"
+        ></a-box>
+
+        <!-- <a-entity
+          position="0 0 0"
+          scale="1 1 1"
+          rotation="0 0 90"
+          gltf-model="#logo"
+        ></a-entity> -->
+
+        <!-- <a-image
+          position="0 0 0"
+          rotation="90 180 0"
+          scale="1 1 1"
+          src="#pic"
+        ></a-image> -->
+
+      </a-marker>
+
+      <a-entity camera></a-entity>
+
+    </a-scene>
+  </body>
+</html>
