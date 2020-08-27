@@ -13,38 +13,31 @@
   <body style="margin: 0px; overflow: hidden">
     <a-scene
       embedded
-      arjs
+      arjs="detectionMode: mono_and_matrix; matrixCodeType: 3x3_HAMMING63;"
       renderer="logarithmicDepthBuffer: true;"
       vr-mode-ui="enabled: false"
     >
       <a-assets>
-        <a-asset-item id="logo" src="../assets/bowser.glb"></a-asset-item>
+        <a-asset-item id="bowser" src="../assets/bowser.glb"></a-asset-item>
         <img id="pic" src="../assets/selfie.png" />
       </a-assets>
 
-      <a-marker preset="hiro">
+      <a-marker type="barcode" value="0">
+         <a-entity
+          position="0 0 1"
+          scale="0.1 0.1 0.1"
+          rotation="-90 0 0"
+          gltf-model="#bowser"
+        ></a-entity>
+      </a-marker>
 
-        <a-box
-          position="0 0 0"
-          color="red"
-          scale="0.7 0.7 0.7"
-          animation="property: rotation; from: 0 0 0; to: 360 0 0; easing: linear; loop: true; dur: 2000"
-        ></a-box>
-
-        <!-- <a-entity
-          position="0 0 0"
-          scale="1 1 1"
-          rotation="0 0 90"
-          gltf-model="#logo"
-        ></a-entity> -->
-
-        <!-- <a-image
-          position="0 0 0"
+      <a-marker type="barcode" value="1">
+        <a-entity
+          position="0 0 1"
+          scale="0.1 0.1 0.1"
           rotation="90 180 0"
-          scale="1 1 1"
-          src="#pic"
-        ></a-image> -->
-
+          gltf-model="#bowser"
+        ></a-entity>
       </a-marker>
 
       <a-entity camera></a-entity>
