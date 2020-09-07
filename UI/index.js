@@ -11,7 +11,6 @@ AFRAME.registerComponent("listen-to-scale", {
   },
 
   handleClick: function (e) {
-    console.log(this.scaleFactor);
     if (e.target.id === "up") {
       this.scaleFactor *= 1.5;
     } else {
